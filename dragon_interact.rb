@@ -12,38 +12,42 @@ class Dragon
 		puts
 		puts "#{@name} is born."
 		puts
-		puts
-		puts "What would you like to do with your dragon, #{@name}?"
-		puts "OPTIONS:"
-		puts "Feed #{@name} 			(enter 'F')"
-		puts "Walk #{@name} 			('W')"
-		puts "Put #{@name} to bed 		('B')"
-		puts "Toss #{@name} in the air	('T')"
-		puts "Rock #{@name}				('R')"
-		puts "Quit program				('Q')"
-		@option = gets.chomp.downcase
+		# set up loop for game
+		while @option != 'q'
+			puts "What would you like to do with your dragon, #{@name}?"
+			puts "OPTIONS:"
+			puts "Feed #{@name} 				(enter 'F')"
+			puts "Walk #{@name} 				('W')"
+			puts "Put #{@name} to bed 			('B')"
+			puts "Toss #{@name} in the air		('T')"
+			puts "Rock #{@name}					('R')"
+			puts "Quit program					('Q')"
+			puts
 		
-		case @option
+			@option = gets.chomp.downcase
+			
+			case @option
 
-		when 'f'
-			feed
-		
-		when 'w'
-			walk
+			when 'f'
+				feed
+			
+			when 'w'
+				walk
 
-		when 'b'
-			put_to_bed
-		
-		when 't'
-			toss
+			when 'b'
+				put_to_bed
+			
+			when 't'
+				toss
 
-		when 'r'
-			rock
+			when 'r'
+				rock
 
-		when 'q'
-			exit
+			when 'q'
+				exit
+			end
+			puts "------------------"
 		end
-
 	end
 
 	def feed
