@@ -14,14 +14,12 @@ class Dragon
 		puts
 		# set up loop for game
 		while @option != 'q'
+			sleep 1.5
 			puts "What would you like to do with your dragon, #{@name}?"
-			puts "OPTIONS:"
-			puts "Feed #{@name} 				(enter 'F')"
-			puts "Walk #{@name} 				('W')"
-			puts "Put #{@name} to bed 			('B')"
-			puts "Toss #{@name} in the air		('T')"
-			puts "Rock #{@name}					('R')"
-			puts "Quit program					('Q')"
+			puts
+			puts "OPTIONS: Feed #{@name} (enter 'F'); Walk('W')"
+			puts "Put to bed('B'); Toss in the air('T')"
+			puts "Rock to help sleep('R'); Quit program('Q')"
 			puts
 		
 			@option = gets.chomp.downcase
@@ -46,12 +44,14 @@ class Dragon
 			when 'q'
 				exit
 			end
-			puts "------------------"
+			puts "-----------------------------"
+			puts
+			puts
 		end
 	end
 
 	def feed
-		puts "You feed #{@name}"
+		puts "You feed #{@name}..."
 		@stuff_in_belly = 10
 		passage_of_time
 	end
@@ -63,7 +63,7 @@ class Dragon
 	end
 
 	def put_to_bed
-		puts "You put #{@name} to bed"
+		puts "You put #{@name} to bed..."
 		@asleep = true
 			
 		3.times do
@@ -71,29 +71,29 @@ class Dragon
 				passage_of_time
 			end
 			if @asleep
-				puts "#{@name} snores filling the room with smoke."
+				puts "#{@name} snores filling the room with smoke..."
 			end
 			if @asleep
 				@asleep = false
-				puts "#{@name} wakes up slowly."
+				puts "#{@name} wakes up slowly..."
 			end
 		end
 	end
 
 	def toss
-		puts "You toss #{@name} up into the air."
-		puts "He giggles, which singes your eyebrows"
+		puts "You toss #{@name} up into the air..."
+		puts "He giggles, which singes your eyebrows..."
 		passage_of_time
 	end
 
 	def rock
-		puts "You rock #{@name} gently."
+		puts "You rock #{@name} gently..."
 		@asleep = true
 		puts "He briefly dozes off..."
 		passage_of_time
 		if @asleep
 			@asleep = false
-			puts "...but wakes when you stop."
+			puts "...but wakes when you stop..."
 		end
 	end
 
@@ -140,7 +140,7 @@ class Dragon
 				@asleep = false
 				puts "He wakes up suddenly!"
 			end
-			puts "#{@name} does trhe potty dance..."
+			puts "#{@name} does the potty dance..."
 		end
 	end
 end
