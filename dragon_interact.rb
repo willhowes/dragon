@@ -10,12 +10,12 @@ class Dragon
 		@stuff_in_belly 	= 10 	# he's full
 		@stuff_in_intestine	= 0 	# he doesn't need to go
 		puts
-		puts "#{@name} is born."
+		puts "#{@name} is born..."
 		puts
 		# set up loop for game
 		while @option != 'q'
-			sleep 1.5
-			puts "What would you like to do with your dragon, #{@name}?"
+			sleep 1
+			puts "What would you like to do with #{@name}?"
 			puts
 			puts "OPTIONS: Feed #{@name} (enter 'F'); Walk('W')"
 			puts "Put to bed('B'); Toss in the air('T')"
@@ -23,6 +23,8 @@ class Dragon
 			puts
 		
 			@option = gets.chomp.downcase
+
+			sleep 0.5
 			
 			case @option
 
@@ -42,8 +44,10 @@ class Dragon
 				rock
 
 			when 'q'
+				puts "Thanks for playing. Goodbye!"
 				exit
 			end
+			sleep 2
 			puts "-----------------------------"
 			puts
 			puts
@@ -119,6 +123,8 @@ class Dragon
 			@stuff_in_intestine = @stuff_in_intestine + 1
 		else # out drgon is starving
 			puts "#{@name} is starving! In desperation, he ate you!"
+			sleep 1
+			puts "GAME OVER!"
 			exit # this quits the program
 		end
 
