@@ -4,13 +4,46 @@ class Dragon
 		system "clear"
 		puts "---WELCOME TO THE DRAGON SIMULATOR---"
 		puts
-		puts "Firstly what would you like to call your dragon?"
+		puts "Firstly, what would you like to call your dragon?"
 		@name = gets.chomp
 		@asleep = false
 		@stuff_in_belly 	= 10 	# he's full
 		@stuff_in_intestine	= 0 	# he doesn't need to go
 		puts
-		puts "#{@name} is born." 
+		puts "#{@name} is born."
+		puts
+		puts
+		puts "What would you like to do with your dragon, #{@name}?"
+		puts "OPTIONS:"
+		puts "Feed #{@name} 			(enter 'F')"
+		puts "Walk #{@name} 			('W')"
+		puts "Put #{@name} to bed 		('B')"
+		puts "Toss #{@name} in the air	('T')"
+		puts "Rock #{@name}				('R')"
+		puts "Quit program				('Q')"
+		@option = gets.chomp.downcase
+		
+		case @option
+
+		when 'f'
+			feed
+		
+		when 'w'
+			walk
+
+		when 'b'
+			put_to_bed
+		
+		when 't'
+			toss
+
+		when 'r'
+			rock
+
+		when 'q'
+			exit
+		end
+
 	end
 
 	def feed
@@ -107,14 +140,4 @@ class Dragon
 		end
 	end
 end
-
-pet = Dragon.new
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+Dragon.new
